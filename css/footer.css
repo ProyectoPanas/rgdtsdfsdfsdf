@@ -1,0 +1,128 @@
+body .footer {
+    margin-top: 140px;
+    z-index: 1;
+    /* background: rgb(255 255 255 / 0%); */
+    display: grid;
+    position: relative;
+    grid-area: footer;
+}
+  body .footer .bubbles {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    right: 0;
+    filter: url("#blob");
+    width: 92.962116%;
+    background: var(--footer-background);
+    height: 0
+  }
+  
+  body .footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 50%;
+    -webkit-animation: bubble-size var(--time, 3000s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 3000s) ease-in infinite var(--delay, 0s);
+            animation: bubble-size var(--time, 3000s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 3000s) ease-in infinite var(--delay, 0s);
+    transform: translate(-50%, 50%);
+    scale: calc(1.1);
+  }
+  body .footer .content {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 2fr auto;
+    /* grid-gap: 4rem; */
+    height: 12rem;
+    background: var(--footer-background);
+  }
+  body .footer .content a, body .footer .content p {
+    color: #F5F7FA;
+    text-decoration: none;
+  }
+  body .footer .content p.p {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    opacity: 1;
+  }
+  body .footer .content > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  body .footer .content > div .image {
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .name{
+    animation: color2 2s linear infinite;
+    transition: .5s;
+  }
+  
+.WaterMark{
+  opacity: .5;
+}
+
+.wi{
+  color: #00bbff;
+  text-shadow: 0 0 10px;
+}
+  @-webkit-keyframes bubble-size {
+    0%, 75% {
+      width: var(--size, 4rem);
+      height: var(--size, 4rem);
+    }
+    100% {
+      width: 0rem;
+      height: 0rem;
+    }
+  }
+  
+  @keyframes bubble-size {
+    0%, 75% {
+      width: var(--size, 4rem);
+      height: var(--size, 4rem);
+    }
+    100% {
+      width: 0rem;
+      height: 0rem;
+    }
+  }
+  @-webkit-keyframes bubble-move {
+    0% {
+      bottom: -4rem;
+    }
+    100% {
+      bottom: var(--distance, 10rem);
+    }
+  }
+  @keyframes bubble-move {
+    0% {
+      bottom: -4rem;
+    }
+    100% {
+      bottom: var(--distance, 10rem);
+    }
+  }
+  
+  @keyframes color2 {
+    0%{
+      color: #fff;
+      text-shadow: 0 #fdbe0000;
+    }
+  
+    50%{
+      color: #00bbff;
+      text-shadow: 0 0 10px #00bbff;
+    }
+  
+    100%{
+      text-shadow: 0 #fdbe0000;
+      color: #fff;
+    }
+  }
